@@ -19,5 +19,5 @@
   <h3><%= comment.user.name %></h3>
   <small>Submitted by <%= comment.user.name %> <%= distance_of_time_in_words(Time.now - @post.created_at) %> ago</small>
 
-  <p><%= comment.body %></p> 
+  <p><%= markdown(comment.body) %></p> 
 <% end %>

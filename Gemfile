@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'redcarpet', '~> 3.3.2'
+gem 'coderay', '~> 1.1.0'
 
 gem 'jquery-rails'
 gem 'turbolinks'
