@@ -34,7 +34,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    
+    @comment = Comment.where(post_id: @post)
   end
 
   def destroy

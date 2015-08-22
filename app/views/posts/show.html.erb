@@ -11,3 +11,13 @@
     <li><%= link_to "Delete Post", @post, method: :delete, data:{ confirm: "Are you sure?" } %></li>
   <% end %>
 </ul>
+
+<%= render 'partials/commentForm' %>
+
+
+<% @comment.each do |comment| %>
+  <h3><%= comment.user.name %></h3>
+  <small>Submitted by <%= comment.user.name %> <%= distance_of_time_in_words(Time.now - @post.created_at) %> ago</small>
+
+  <p><%= comment.body %></p> 
+<% end %>
