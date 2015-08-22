@@ -39,6 +39,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
+
+    redirect_to 'index'
   end
 
   private
