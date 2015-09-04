@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   end
 
   root 'posts#index'
+  
+  get '/category/:id', to: 'categories#show', as: 'category'
 end

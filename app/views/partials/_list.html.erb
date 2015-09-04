@@ -8,10 +8,12 @@
     <p>
       <%= markdown(post.body.truncate(600)) %> <%= link_to "Read more", post_path(post)%>, 
       <% if post.comments.count > 1 || post.comments.count == 0 %>
-        (<%= post.comments.count %>) Comments
+        <%= post.comments.count %> Comments
       <% else %>
-        (<%= post.comments.count %>) Comment 
+        <%= post.comments.count %> Comment 
       <% end %>
     </p>
+
+    <small>Category: <%= link_to post.category.name, category_path(post.category) %></small>
   </article>
 <% end %>

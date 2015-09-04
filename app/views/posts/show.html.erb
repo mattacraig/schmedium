@@ -21,6 +21,6 @@
 
 <% @comment.each do |comment| %>
   <h3><%= comment.user.name %></h3>
-  <p><%= comment.body %></p>
-  <small>Submitted by <%= comment.user.name %> <%= distance_of_time_in_words(Time.now - comment.created_at) %> ago</small>
+  <p><%= markdown(comment.body) %></p>
+  <small>Submitted <%= distance_of_time_in_words(Time.now - comment.created_at) %> ago</small>
 <% end %>
