@@ -5,6 +5,13 @@
       <small>Written by <%= post.user.name %> <%= distance_of_time_in_words(Time.now - post.created_at) %> ago</small> 
     </header>
 
-    <p><%= markdown(post.body.truncate(600)) %> <%= link_to "Read more", post_path(post) %></p>
+    <p>
+      <%= markdown(post.body.truncate(600)) %> <%= link_to "Read more", post_path(post)%>, 
+      <% if post.comments.count > 1 || post.comments.count == 0 %>
+        (<%= post.comments.count %>) Comments
+      <% else %>
+        (<%= post.comments.count %>) Comment 
+      <% end %>
+    </p>
   </article>
 <% end %>

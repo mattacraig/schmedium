@@ -12,12 +12,15 @@
   <% end %>
 </ul>
 
+<h2>Leave a Comment:*</h2>
+
 <%= render 'partials/commentForm' %>
+
+<small>*Use Markdown to format your comments! You can reference <%= link_to "this handy cheatsheet", "http://assemble.io/docs/Cheatsheet-Markdown.html", target: "_blank" %></small>
 
 
 <% @comment.each do |comment| %>
   <h3><%= comment.user.name %></h3>
-  <small>Submitted by <%= comment.user.name %> <%= distance_of_time_in_words(Time.now - @post.created_at) %> ago</small>
-
-  <p><%= markdown(comment.body) %></p> 
+  <p><%= comment.body %></p>
+  <small>Submitted by <%= comment.user.name %> <%= distance_of_time_in_words(Time.now - comment.created_at) %> ago</small>
 <% end %>
