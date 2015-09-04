@@ -1,7 +1,7 @@
 <p><%= notice %></p>
 
-<h2><%= @post.title %></h2>
-<small>Written by <%= @post.user.name %> <%= distance_of_time_in_words(Time.now - @post.created_at) %> ago</small>
+<h1><%= @post.title %></h1>
+<small>Written by <%= image_tag(@post.user.avatar.url(:thumb)) %> <%= @post.user.name %> <%= distance_of_time_in_words(Time.now - @post.created_at) %> ago</small>
 
 <p><%= markdown(@post.body) %></p>
 
@@ -20,7 +20,7 @@
 
 
 <% @comment.each do |comment| %>
-  <h3><%= comment.user.name %></h3>
+  <h3><%= image_tag(comment.user.avatar.url(:thumb)) %><%= comment.user.name %></h3>
   <p><%= markdown(comment.body) %></p>
   <small>Submitted <%= distance_of_time_in_words(Time.now - comment.created_at) %> ago</small>
 <% end %>

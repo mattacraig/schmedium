@@ -3,6 +3,7 @@
     <ul class="main-nav">
       <li><%= link_to "Schmedium", root_path %></li>
       <% if user_signed_in? %>
+      <li><%= image_tag(current_user.avatar.url(:thumb)) %></li>
         <li><%= link_to "Write New Post", new_post_path %></li>
         <% if current_user.sign_in_count > 1 %>
           <li>Welcome Back, <%= current_user.name %>!</li>
