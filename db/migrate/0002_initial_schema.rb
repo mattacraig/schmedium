@@ -10,7 +10,6 @@ class InitialSchema < ActiveRecord::Migration
 
     create_table :comments do |t| 
       t.text :body
-
       t.timestamps
     end
 
@@ -20,7 +19,7 @@ class InitialSchema < ActiveRecord::Migration
 
     add_reference :posts, :user, index: true        
     add_reference :posts, :category, index: true
-    add_reference :comments, :user, index: true
     add_reference :comments, :post, index: true
+    add_reference :comments, :user, index: true
   end
 end
