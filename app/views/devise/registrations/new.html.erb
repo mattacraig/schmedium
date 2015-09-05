@@ -19,9 +19,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :about, "About Me" %><br />
+    <%= f.label :about, "About Me*" %><br />
     <%= f.text_area :about %>
   </div>
+
+  <small>*Use Markdown to format your bio! You can reference <%= link_to "this handy cheatsheet", "http://assemble.io/docs/Cheatsheet-Markdown.html", target: "_blank" %></small>
+
 
   <div class="field">
     <%= f.label :password %>
