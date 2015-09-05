@@ -13,6 +13,11 @@
   <% end %>
 </ul>
 
+<div class="about">
+  <h2>About <%= @post.user.name %></h2>
+  <%= markdown(@post.user.about) %>
+</div>
+
 <h2>Leave a Comment:*</h2>
 
 <%= render 'partials/commentForm' %>
