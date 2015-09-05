@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
 
-  has_attached_file :avatar, styles: { medium: '300x300>', thumb: '80x80#' }, default_url: '../../public/defaultpic.png'
+  has_attached_file :avatar, styles: { medium: '300x300>', thumb: '40x40#' }, default_url: '../../public/defaultpic.png'
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 end

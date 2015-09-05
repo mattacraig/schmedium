@@ -1,7 +1,8 @@
 <p><%= notice %></p>
 
 <h1><%= @post.title %></h1>
-<small>Written by <%= image_tag(@post.user.avatar.url(:thumb)) %> <%= @post.user.name %> <%= distance_of_time_in_words(Time.now - @post.created_at) %> ago</small>
+<%= image_tag(@post.user.avatar.url(:thumb)) %>
+<small>Written by <%= link_to @post.user.name, author_path(@post.user) %> <%= distance_of_time_in_words(Time.now - @post.created_at) %> ago</small>
 
 <p><%= markdown(@post.body) %></p>
 

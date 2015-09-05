@@ -1,16 +1,16 @@
 <% @posts.each do |post| %>
   <article>
     <header>
-      <h2><%= post.title %></h2>
+      <h2><%= link_to post.title, post_path(post) %></h2>
       <small>Written by <%= link_to post.user.name, author_path(post.user) %> <%= distance_of_time_in_words(Time.now - post.created_at) %> ago</small> 
     </header>
 
     <p>
-      <%= markdown(post.body.truncate(600)) %> <%= link_to "Read more", post_path(post)%>, 
-      <% if post.comments.count > 1 || post.comments.count == 0 %>
-        <%= post.comments.count %> Comments
+      <%= markdown(post.body.truncate(600)) %> 
+      <% if post.comments.count == 1 %>
+        <%= post.comments.count %> Comment
       <% else %>
-        <%= post.comments.count %> Comment 
+        <%= post.comments.count %> Comments
       <% end %>
     </p>
 
