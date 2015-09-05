@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :comments do
-    resources :comments
-  end
-
   resources :posts do
     resources :comments
   end
@@ -12,4 +8,6 @@ Rails.application.routes.draw do
   root 'posts#index'
   
   get '/category/:id', to: 'categories#show', as: 'category'
+  get '/authors/:id', to: 'authors#show', as: 'author'
+
 end
