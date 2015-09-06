@@ -9,6 +9,7 @@ gem 'devise'
 gem 'redcarpet', '~> 3.3.2'
 gem 'coderay', '~> 1.1.0'
 gem 'paperclip', '~> 4.3.0'
+gem 'impressionist', '~> 1.5.1'
 
 gem 'jquery-rails'
 gem 'turbolinks'

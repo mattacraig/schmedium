@@ -14,11 +14,15 @@
 </ul>
 
 <div class="about">
+<<<<<<< HEAD
   <div class="user-pic">
     <%= image_tag(@post.user.avatar.url(:medium)) %>
   </div>
   <h2>About <%= @post.user.name %></h2>
   <p><%= @post.user.location %></p>
+=======
+  <%= image_tag(@post.user.avatar.url(:medium)) %>
+>>>>>>> pageViews
   <%= markdown(@post.user.about) %>
 </div>
 

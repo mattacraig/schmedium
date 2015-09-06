@@ -14,6 +14,13 @@
         <%= post.comments.count %> Comments
       <% end %>
     </p>
+    <small>
+      <% if post.impressionist_count == 1 %>
+        <%= post.impressionist_count %> View
+      <% else %>
+        <%= post.impressionist_count %> Views
+      <% end %>
+    </small>
 
     <small>Category: <%= link_to post.category.name, category_path(post.category) %></small>
   </article>
