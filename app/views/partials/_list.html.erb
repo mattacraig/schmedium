@@ -2,6 +2,7 @@
   <article>
     <header>
       <h2><%= link_to post.title, post_path(post) %></h2>
+      <%= image_tag(post.user.avatar.url(:thumb)) %>
       <small>Written by <%= link_to post.user.name, author_path(post.user) %> <%= distance_of_time_in_words(Time.now - post.created_at) %> ago</small> 
     </header>
 

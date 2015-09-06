@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150822140909) do
     t.string   "email",                  default: "", null: false
     t.string   "name"
     t.string   "encrypted_password",     default: "", null: false
+    t.string   "location"
     t.text     "about"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"

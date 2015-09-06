@@ -14,7 +14,11 @@
 </ul>
 
 <div class="about">
+  <div class="user-pic">
+    <%= image_tag(@post.user.avatar.url(:medium)) %>
+  </div>
   <h2>About <%= @post.user.name %></h2>
+  <p><%= @post.user.location %></p>
   <%= markdown(@post.user.about) %>
 </div>
 
@@ -24,9 +28,12 @@
 
 <small>*Use Markdown to format your comments! You can reference <%= link_to "this handy cheatsheet", "http://assemble.io/docs/Cheatsheet-Markdown.html", target: "_blank" %></small>
 
-
-<% @comment.each do |comment| %>
-  <h3><%= image_tag(comment.user.avatar.url(:thumb)) %><%= comment.user.name %></h3>
-  <p><%= markdown(comment.body) %></p>
-  <small>Submitted <%= distance_of_time_in_words(Time.now - comment.created_at) %> ago</small>
-<% end %>
+<div class="comments-wrapper">
+  <div class="comment">
+    <% @comment.each do |comment| %>
+      <h3><%= image_tag(comment.user.avatar.url(:thumb)) %><%= comment.user.name %></h3>
+      <p><%= markdown(comment.body) %></p>
+      <small>Submitted <%= distance_of_time_in_words(Time.now - comment.created_at) %> ago</small>
+    <% end %>
+  </div>
+</div>
